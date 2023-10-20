@@ -4,6 +4,7 @@ require('dotenv').config();
 const port = 3000;
 
 const ContactRouter = require('./routes/contact.routes')
+const InfoComponentRouter = require('./routes/infoComponent.routes')
 
 app.use(express.json());
 
@@ -12,6 +13,7 @@ const connectDB = require('./DB/mongo');
 connectDB();
 
 app.use('/portfolio', ContactRouter);
+app.use('/portfolio',InfoComponentRouter)
 app.get('/', (req, res) => {
     res.send('¡Hola, bienvenido!');
 });
